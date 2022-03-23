@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<canvas id="cv" style="width: 500px; height: 500px;border: 1px solid "></canvas>
+<body>
+<script>
+    class HCN {
+        cd;
+        cr;
+        mau;
+        x;
+        y;
+
+        constructor(s1, s2, s3, s4, s5) {
+            this.cd = s1;
+            this.cr = s2;
+            this.mau = s3;
+            this.x = s4;
+            this.y = s5;
+        }
+
+        tinhCV() {
+            return (this.cr + this.cd) * 2;
+        }
+
+        tinhDT() {
+            return (this.cd * this.cr);
+        }
+
+        ve() {
+            let ctv = document.getElementById('cv').getContext('2d');
+            ctv.beginPath();
+            ctv.fillRect(this.x, this.y, this.cd, this.cr);
+            ctv.closePath()
+        }
+
+    }
+
+    let h2r = new HCN(100,100,100,100,100)
+    h2r.ve()
+</script>
+
+</body>
+</html>

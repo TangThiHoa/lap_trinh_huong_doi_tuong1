@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="cv" style="width: 500px; height: 500px;border: 1px solid "></canvas>
+
+<script>
+    class HT {
+        x;
+        y;
+        radius;
+        mau;
+
+        constructor(s1, s2, s3, s4, s5) {
+            this.x = s1;
+            this.y = s2
+            this.radius = s3;
+            this.bd = s4;
+            this.kt = s5;
+        }
+
+        tinhCV() {
+            return this.radius * 2 * 3.14;
+        }
+
+        tinhDT() {
+            return this.radius * this.radius * 3.14;
+        }
+
+        ve() {
+            let ctv = document.getElementById('cv').getContext('2d');
+            ctv.beginPath();
+            // ctv.arc(this.x, this.y, this.radius, this.bd, this.kt);
+            ctv.arc(100, 100, 50, 0, 2 * Math.PI);
+            ctv.fill();
+            // ctv.fillStyle = this.mau
+            ctv.closePath();
+        }
+
+    }
+
+
+    let ht = new HT(50, 50, 100, 0, 2 * Math.PI)
+    ht.ve()
+    console.log(ht.tinhDT())
+    console.log(ht.tinhCV())
+</script>
+
+</body>
+</html>
